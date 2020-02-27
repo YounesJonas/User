@@ -6,6 +6,7 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.yb.user.error.Country;
 
 
 
@@ -23,6 +24,7 @@ public class User {
 	@Min(message = "user must be of legal age" , value = 18)
 	private int age;
 	@NotBlank(message = "user's country must be completed !")
+	@Country
 	private String country;
 	private String mail;
 	public User() {
